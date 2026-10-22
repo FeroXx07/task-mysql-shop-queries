@@ -250,7 +250,7 @@ ORDER BY p.precio DESC, f.nombre ASC;
 -- 33. Retorna un llistat amb el codi i el nom de fabricant (fabricante), solament d'aquells fabricants que tenen productes associats en la base de dades.
 SELECT DISTINCT
 	f.codigo,
-    f.nombre as 'fabricante'
+    f.nombre as 'nombre'
 FROM producto as p
 LEFT JOIN fabricante as f
 	ON (f.codigo = p.codigo_fabricante);
@@ -310,7 +310,23 @@ ORDER BY p.precio ASC
 LIMIT 1
 
 -- 40. Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
-
+SELECT *
+FROM producto as p
+WHERE p.precio >= (
+    SELECT MAX(p.precio)
+    FROM producto p
+	JOIN fabricante f
+        ON f.codigo = p.codigo_fabricante
+    WHERE f.codigo = 2
+);
 
 -- 41. Llista tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.
-
+SELECT *
+FROM producto as p
+WHERE p.precio >= (
+    SELECT AVG(p.precio)
+    FROM producto p
+	JOIN fabricante f
+        ON f.codigo = p.codigo_fabricante
+    WHERE f.codigo = 1
+) AND p.codigo_fabricante = 1;
