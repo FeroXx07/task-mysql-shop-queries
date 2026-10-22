@@ -287,7 +287,7 @@ JOIN fabricante as f
 	ON (f.codigo = p.codigo_fabricante)
 WHERE f.codigo = 2
 ORDER BY p.precio DESC
-LIMIT 1
+LIMIT 1;
 
 -- 38. Llista el nom del producte més car del fabricant Lenovo.
 SELECT
@@ -297,7 +297,7 @@ JOIN fabricante as f
 	ON (f.codigo = p.codigo_fabricante)
 WHERE f.codigo = 2
 ORDER BY p.precio DESC
-LIMIT 1
+LIMIT 1;
 
 -- 39. Llista el nom del producte més barat del fabricant Hewlett-Packard.
 SELECT
@@ -307,7 +307,7 @@ JOIN fabricante as f
 	ON (f.codigo = p.codigo_fabricante)
 WHERE f.codigo = 3
 ORDER BY p.precio ASC
-LIMIT 1
+LIMIT 1;
 
 -- 40. Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
 SELECT *
