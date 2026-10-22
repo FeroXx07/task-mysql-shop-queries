@@ -44,7 +44,7 @@ FROM producto as p;
 SELECT
 	f.nombre,
     UPPER(LEFT(f.nombre, 2)) as 'iniciales'
-FROM fabricante as f
+FROM fabricante as f;
 
 -- 9. Llista els noms i els preus dels productes, arrodonint el valor del preu (precio)
 SELECT
