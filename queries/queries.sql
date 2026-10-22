@@ -43,7 +43,7 @@ FROM producto as p;
 -- 8. Llista el nom de tots els fabricants en una columna, i en una altra columna obtingui en majúscules els dos primers caràcters del nom del fabricant (iniciales).
 SELECT
 	f.nombre,
-    UPPER(SUBSTR(f.nombre, 1, 2)) as 'iniciales'
+    UPPER(LEFT(f.nombre, 2)) as 'iniciales'
 FROM fabricante as f
 
 -- 9. Llista els noms i els preus dels productes, arrodonint el valor del preu (precio)
