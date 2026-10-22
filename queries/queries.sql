@@ -150,8 +150,8 @@ ORDER BY f.nombre ASC;
 SELECT
 	p.codigo,
 	p.nombre,
-    f.nombre as 'nombre fabricante',
-    f.codigo as 'codigo fabricante'
+	f.codigo as 'codigo fabricante',
+    f.nombre as 'nombre fabricante'
 FROM fabricante as f
 JOIN producto as p
 	ON (f.codigo = p.codigo_fabricante);
