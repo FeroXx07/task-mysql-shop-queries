@@ -1,32 +1,63 @@
 -- 1. Llista el nom de tots els productes que hi ha en la taula producto.
-
+SELECT
+	p.nombre
+FROM producto as p;
 
 -- 2. Llista els noms i els preus de tots els productes de la taula producto.
-
+SELECT
+	p.nombre,
+    p.precio
+FROM producto as p;
 
 -- 3. Llista totes les columnes de la taula producto.
-
+SELECT
+	*
+FROM producto as p;
 
 -- 4. Llista el nom dels productes, el preu en euros (precio_eur) i el preu en dòlars estatunidencs (precio_usd) amb un tipus de canvi de 1 € = 1 $.
-
+SELECT
+	p.nombre,
+    p.precio as precio_eur,
+    p.precio as precio_usd
+FROM producto as p;
 
 -- 5. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (amb un tipus de canvi de 1 € = 1,1 $ i arrodonint el resultat a dues xifres decimals). Utilitza els següents àlies per a les columnes: nom del producte, euros, dòlars.
-
+SET @eur_to_dol = 1.1;
+SELECT
+	p.nombre as 'nom del producte',
+    p.precio as 'euros',
+    ROUND(p.precio * @eur_to_dol, 2) as 'dòlars'
+FROM producto as p;
 
 -- 6. Llista els noms (nombre) i els preus de tots els productes de la taula producto, convertint els noms a majúscula.
-
+SELECT
+	UPPER(p.nombre) as 'nombre',
+    p.precio
+FROM producto as p;
 
 -- 7. Llista els noms (nombre) i els preus (precio) dels productes de la taula producto, convertint els noms a minúscula.
-
+SELECT
+	LOWER(p.nombre) as 'nombre',
+    p.precio
+FROM producto as p;
 
 -- 8. Llista el nom de tots els fabricants en una columna, i en una altra columna obtingui en majúscules els dos primers caràcters del nom del fabricant (iniciales).
-
+SELECT
+	f.nombre,
+    SUBSTR(f.nombre, 1, 2) as 'iniciales'
+FROM fabricante as f
 
 -- 9. Llista els noms i els preus dels productes, arrodonint el valor del preu (precio)
-
+SELECT
+	p.nombre,
+    ROUND(p.precio) as 'precio'
+FROM producto as p;
 
 -- 10. Llista els noms i els preus de tots els productes (precio truncado) de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
-
+SELECT
+	p.nombre,
+    TRUNCATE(p.precio, 0) as 'precio truncado'
+FROM producto as p;
 
 -- 11. Mostra una llista amb els codis dels fabricants que apareixen a la taula producto, incloent possibles repeticions.
 
