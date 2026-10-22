@@ -6,49 +6,49 @@
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.40 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.17 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.15 ms
+⏱ Tiempo: 0.28 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.14 ms
+⏱ Tiempo: 0.28 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.17 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.15 ms
+⏱ Tiempo: 0.28 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.16 ms
+⏱ Tiempo: 0.27 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -84,7 +84,7 @@ FROM producto as p' at line 8
  Impresora HP Laserjet Pro M26nw | 180.00
 ```
 
-⏱ Tiempo: 0.18 ms
+⏱ Tiempo: 0.28 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
