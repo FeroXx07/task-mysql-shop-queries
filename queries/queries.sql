@@ -59,34 +59,73 @@ SELECT
 FROM producto as p;
 
 -- 11. Mostra una llista amb els codis dels fabricants que apareixen a la taula producto, incloent possibles repeticions.
-
+SELECT
+	codigo_fabricante
+FROM producto as p
+LEFT JOIN fabricante as f
+	ON (p.codigo_fabricante = f.codigo);
 
 -- 12. Llista el codi dels fabricants que tenen productes en la taula producto, eliminant els codis que apareixen repetits.
-
+SELECT
+	DISTINCT codigo_fabricante
+FROM producto as p
+LEFT JOIN fabricante as f
+	ON (p.codigo_fabricante = f.codigo);
 
 -- 13. Llista els noms dels fabricants ordenats de manera ascendent
-
+SELECT
+	f.nombre
+FROM fabricante as f
+ORDER BY f.nombre ASC;
 
 -- 14. Llista els noms dels fabricants ordenats de manera descendent
-
+SELECT
+	f.nombre
+FROM fabricante as f
+ORDER BY f.nombre DESC;
 
 -- 15. Llista els noms i els preus dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
-
+SELECT
+	p.nombre,
+    p.precio
+FROM producto as p
+ORDER BY p.nombre ASC, p.precio DESC;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
-
+SELECT
+*
+FROM fabricante as f
+LIMIT 5;
 
 -- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. La quarta fila també s'ha d'incloure en la resposta.
-
+SELECT
+*
+FROM fabricante as f
+LIMIT 3, 2;
 
 -- 18. Llista el nom i el preu del producte més barat. (Utilitza solament les clàusules ORDER BY i LIMIT).
-
+SELECT
+	p.nombre,
+    p.precio
+FROM producto as p
+ORDER BY p.precio ASC
+LIMIT 1;
 
 -- 19. Llista el nom i el preu del producte més car. (Utilitza solament les clàusules ORDER BY i LIMIT).
-
+SELECT
+	p.nombre,
+    p.precio
+FROM producto as p
+ORDER BY p.precio DESC
+LIMIT 1;
 
 -- 20. Llista el nom de tots els productes del fabricant el codi de fabricant del qual és igual a 2.
-
+SELECT
+	p.nombre
+FROM producto as p
+JOIN fabricante as f
+	ON p.codigo_fabricante = f.codigo
+WHERE p.codigo_fabricante = 2;
 
 -- 21. Retorna una llista amb el nom del producte, preu i nom de fabricant (nombre del fabricante) de tots els productes de la base de dades.
 
