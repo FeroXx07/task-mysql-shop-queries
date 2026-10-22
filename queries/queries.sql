@@ -160,7 +160,7 @@ JOIN producto as p
 SELECT
 	p.nombre,
     p.precio,
-    f.nombre as 'fabricante'
+    f.nombre as 'fabricant'
 FROM fabricante as f
 JOIN producto as p
 	ON (f.codigo = p.codigo_fabricante)
