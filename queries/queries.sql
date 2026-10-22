@@ -244,6 +244,7 @@ SELECT
 FROM fabricante as f
 JOIN producto as p
 	ON (f.codigo = p.codigo_fabricante)
+WHERE p.precio >= 180
 ORDER BY p.precio DESC, f.nombre ASC;
 
 -- 33. Retorna un llistat amb el codi i el nom de fabricant (fabricante), solament d'aquells fabricants que tenen productes associats en la base de dades.
